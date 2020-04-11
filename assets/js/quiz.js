@@ -1,3 +1,15 @@
+//timer
+var count = document.querySelector(".time");
+    function timer () {
+        count.textContent = 60;
+        var timer = setInterval(function() {
+            if(count.textContent > 0) {
+                count.textContent -= 1 }
+                else {clearInterval(timer);}
+            }
+            , 1000)
+        }
+
 // to populate questions
 var populate = function () {
     if (quiz.endQuiz()) {
@@ -72,5 +84,5 @@ var questions = [
 //creating an object for the score
 
 var quiz = new Quiz(questions);
-
+timer();
 populate();
